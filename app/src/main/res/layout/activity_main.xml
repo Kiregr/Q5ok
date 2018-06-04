@@ -253,6 +253,64 @@
                 />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp">
+
+            <Button
+                android:id="@+id/btn_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:textSize="25sp"
+                android:minHeight="80dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorNumBtnText"
+                android:background="@color/colorNumBtnBackground"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_zero"
+                android:text="0"
+                android:layout_marginLeft="2dp"
+                android:textSize="25sp"
+                android:minHeight="80dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorNumBtnText"
+                android:background="@color/colorNumBtnBackground"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_equal"
+                android:text="="
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:textSize="25sp"
+                android:minHeight="80dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorNumBtnText"
+                android:background="#6566"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_divide"
+                android:text="/"
+                android:textSize="30sp"
+                android:minHeight="80dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorFuncBtnText"
+                android:background="@color/colorFuncBtnBackground"
+                />
+        </LinearLayout>
+
 
     </LinearLayout>
 
