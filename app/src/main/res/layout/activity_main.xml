@@ -19,16 +19,70 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="bottom"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:minHeight="80dp"
+                android:textStyle="bold"
+                android:background="@color/colorFuncBtnBackground"
+                android:textColor="@color/colorFuncBtnText"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_small_bracket"
+                android:text="( )"
+                android:layout_marginLeft="2dp"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:minHeight="80dp"
+                android:textStyle="bold"
+                android:background="@color/colorFuncBtnBackground"
+                android:textColor="@color/colorFuncBtnText"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_percentage"
+                android:text="%"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:minHeight="80dp"
+                android:textStyle="bold"
+                android:background="@color/colorFuncBtnBackground"
+                android:textColor="@color/colorFuncBtnText"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_back"
+                android:text="<<"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:minHeight="80dp"
+                android:textStyle="bold"
+                android:background="@color/colorFuncBtnBackground"
+                android:textColor="@color/colorFuncBtnText"
+                />
         </LinearLayout>
+
+
 
     </LinearLayout>
 
