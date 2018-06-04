@@ -1,10 +1,16 @@
 package com.snuggletummy.q5ok;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+
+import com.faendir.rhino_android.RhinoAndroidHelper;
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Scriptable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
     String processor;
     Boolean isSmallBracketOpen;
     Button btnMultiply, btnMinus, btnPlus, btnDivide;
-    Button btnDecimal, btnBack, btnSmallBracket;
+    Button btnDecimal, btnBack, btnSmallBracket, btnEqual;
+
+    //RhinoAndroidHelper rhinoAndroidHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
         btnBack = (Button)findViewById(R.id.btn_back);
 
         btnSmallBracket = (Button)findViewById(R.id.btn_small_bracket);
+
+        btnEqual = (Button)findViewById(R.id.btn_equal);
+
 
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -212,5 +224,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //
+        //Equal
+        //
+        btnEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                processor = tvProcessor.getText().toString();
+
+                processor = processor.replaceAll("X", "*");
+                processor = processor.replaceAll("%", "/100");
+
+                Context rhino = Context.enter();
+                rhino.setOptimizationLevel(-1);
+                String result = "";
+
+                try{
+                    Scriptable scope = rhino.initStandardObjects();
+                    result = rhino.evaluateString(scope, processor, "JavaScript", 1, null).toString();
+                }
+                catch (Exception e){
+                    result = "Error";
+                }
+                tvResult.setText(result);
+
+                //rhinoAndroidHelper = new RhinoAndroidHelper().enterContext();
+            }
+        });
     }
 }
