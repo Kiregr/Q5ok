@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     String processor;
     Boolean isSmallBracketOpen;
     Button btnMultiply, btnMinus, btnPlus, btnDivide;
-    Button btnDecimal, btnBack, btnSmallBracket, btnEqual;
+    Button btnDecimal, btnBack, btnSmallBracket, btnEqual, btnPercentage;
 
     //RhinoAndroidHelper rhinoAndroidHelper;
 
@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         btnBack = (Button)findViewById(R.id.btn_back);
 
         btnSmallBracket = (Button)findViewById(R.id.btn_small_bracket);
+
+        btnPercentage = (Button)findViewById(R.id.btn_percentage);
 
         btnEqual = (Button)findViewById(R.id.btn_equal);
 
@@ -221,6 +223,17 @@ public class MainActivity extends AppCompatActivity {
                     isSmallBracketOpen = true;
 
                 }
+            }
+        });
+
+        //
+        // Percentage
+        //
+        btnPercentage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                processor = tvProcessor.getText().toString();
+                tvProcessor.setText(processor + "%");
             }
         });
 
