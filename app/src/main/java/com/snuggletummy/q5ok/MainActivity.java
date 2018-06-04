@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 processor = tvProcessor.getText().toString();
-                tvProcessor.setText(processor + "X");
+                tvProcessor.setText(processor + "*");
             }
         });
 
@@ -244,8 +244,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 processor = tvProcessor.getText().toString();
-
-                processor = processor.replaceAll("X", "*");
+                
                 processor = processor.replaceAll("%", "/100");
 
                 Context rhino = Context.enter();
