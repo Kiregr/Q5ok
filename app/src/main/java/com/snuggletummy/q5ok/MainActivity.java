@@ -14,13 +14,16 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine, btnZero;
     String processor;
+    Boolean isSmallBracketOpen;
     Button btnMultiply, btnMinus, btnPlus, btnDivide;
-    Button btnDecimal, btnBack;
+    Button btnDecimal, btnBack, btnSmallBracket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        isSmallBracketOpen = false;
 
         //Assign variables
         btnClear = (Button) findViewById(R.id.btn_delete);
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         btnDecimal = (Button)findViewById(R.id.btn_dot);
         btnBack = (Button)findViewById(R.id.btn_back);
 
+        btnSmallBracket = (Button)findViewById(R.id.btn_small_bracket);
 
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,6 +191,23 @@ public class MainActivity extends AppCompatActivity {
                 if(processor.length() > 0) {
                     processor = processor.substring(0,processor.length()-1);
                     tvProcessor.setText(processor);
+                }
+            }
+        });
+
+        btnSmallBracket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isSmallBracketOpen){
+                    processor = tvProcessor.getText().toString();
+                    tvProcessor.setText(processor + ")");
+                    isSmallBracketOpen = false;
+                }
+                else{
+                    processor = tvProcessor.getText().toString();
+                    tvProcessor.setText(processor + "(");
+                    isSmallBracketOpen = true;
+
                 }
             }
         });
