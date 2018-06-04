@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine, btnZero;
     String processor;
+    Button btnMultiply, btnMinus, btnPlus, btnDivide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         tvProcessor = (TextView)findViewById(R.id.tv_process);
         tvResult = (TextView)findViewById(R.id.tv_result);
 
+        tvProcessor.setText("");
+        tvResult.setText("");
+
         btnOne = (Button)findViewById(R.id.btn_one);
         btnTwo = (Button)findViewById(R.id.btn_two);
         btnThree = (Button)findViewById(R.id.btn_three);
@@ -35,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         btnEight = (Button)findViewById(R.id.btn_eight);
         btnNine = (Button)findViewById(R.id.btn_nine);
         btnZero = (Button)findViewById(R.id.btn_zero);
+
+        btnMultiply = (Button)findViewById(R.id.btn_multiply);
+        btnMinus = (Button)findViewById(R.id.btn_minus);
+        btnPlus = (Button)findViewById(R.id.btn_plus);
+        btnDivide = (Button)findViewById(R.id.btn_divide);
 
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
