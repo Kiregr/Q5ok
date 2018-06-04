@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine, btnZero;
     String processor;
     Button btnMultiply, btnMinus, btnPlus, btnDivide;
+    Button btnDecimal, btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         btnMinus = (Button)findViewById(R.id.btn_minus);
         btnPlus = (Button)findViewById(R.id.btn_plus);
         btnDivide = (Button)findViewById(R.id.btn_divide);
+
+        btnDecimal = (Button)findViewById(R.id.btn_dot);
+        btnBack = (Button)findViewById(R.id.btn_back);
+
 
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,6 +169,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 processor = tvProcessor.getText().toString();
                 tvProcessor.setText(processor + "/");
+            }
+        });
+
+        btnDecimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                processor = tvProcessor.getText().toString();
+                tvProcessor.setText(processor + ".");
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                processor = tvProcessor.getText().toString();
+                if(processor.length() > 0) {
+                    processor = processor.substring(0,processor.length()-1);
+                    tvProcessor.setText(processor);
+                }
             }
         });
 
