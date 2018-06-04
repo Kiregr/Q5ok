@@ -133,5 +133,39 @@ public class MainActivity extends AppCompatActivity {
                 tvProcessor.setText(processor + "0");
             }
         });
+
+        //Functional buttons
+        btnMultiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                processor = tvProcessor.getText().toString();
+                tvProcessor.setText(processor + "X");
+            }
+        });
+
+        btnMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                processor = tvProcessor.getText().toString();
+                tvProcessor.setText(processor + "-");
+            }
+        });
+
+        btnPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                processor = tvProcessor.getText().toString();
+                tvProcessor.setText(processor + "+");
+            }
+        });
+
+        btnDivide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                processor = tvProcessor.getText().toString();
+                tvProcessor.setText(processor + "/");
+            }
+        });
+
     }
 }
